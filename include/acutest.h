@@ -277,7 +277,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <setjmp.h>
+
+#ifdef ACUTEST_NOSETJMP
+    #define setjmp(ptr) 0
+    #define longjmp(ptr, val) abort()
+    #define jmp_buf int
+#else
+    #include <setjmp.h>
+#endif
 
 #if defined(unix) || defined(__unix__) || defined(__unix) || defined(__APPLE__)
     #define ACUTEST_UNIX_       1
