@@ -1,6 +1,3 @@
-[![Linux Build Status (travis-ci.com)](https://img.shields.io/travis/mity/acutest/master.svg?logo=linux&label=linux%20build)](https://travis-ci.com/mity/acutest)
-[![Windows Build Status (appveyor.com)](https://img.shields.io/appveyor/ci/mity/acutest/master.svg?logo=windows&label=windows%20build)](https://ci.appveyor.com/project/mity/acutest/branch/master)
-
 
 # Acutest Readme
 
@@ -372,9 +369,9 @@ tests. It can also run only subset of the unit tests as specified on the
 command line:
 
 ```sh
-$ ./test_example                # Runs all tests in the suite
-$ ./test_example test1 test2    # Runs only tests specified
-$ ./test_example --skip test3   # Runs all tests but those specified
+$ ./test_example                  # Runs all tests in the suite
+$ ./test_example test1 test2      # Runs only tests specified
+$ ./test_example --exclude test3  # Runs all tests but those specified
 ```
 
 Note that a single command line argument can select a whole group of test units
@@ -397,8 +394,8 @@ matching at least one test unit is used):
    selected.
 
 By adopting an appropriate test naming strategy, this allows user to run (or
-to skip if `--skip` is used) easily whole family of related tests with a single
-command line argument.
+to skip if `--exclude` is used) easily whole family of related tests with a
+single command line argument.
 
 For example consider test suite `test_example` which implements tests `foo-1`,
 `foo-2`, `foomatic`, `bar-1` and `bar-10`:
